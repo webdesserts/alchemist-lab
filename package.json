@@ -1,0 +1,25 @@
+{
+  "name": "alchemist-lab",
+  "version": "0.1.0",
+  "description": "the official Lab plugin for Alchemist.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webdesserts/alchemist-lab"
+  },
+  "keywords": [
+    "lab",
+    "color",
+    "color-space",
+    "alchemist-plugin"
+  ],
+  "author": "Michael C. Mullins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webdesserts/alchemist-lab/issues"
+  },
+  "homepage": "https://github.com/webdesserts/alchemist-lab"
+}
