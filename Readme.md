@@ -21,7 +21,7 @@ If you are not using `alchemist.common` you can instead use this library directl
 ```js
   var alchemist = require('alchemist-js').create()
   var lab = require('alchemist-lab')
-  alchemist.use(lab)
+  alchemist.use(lab())
 ```
 
 ### Web
