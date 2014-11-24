@@ -13,7 +13,7 @@ By default alchemist-lab is included in `alchemist.common`.
 ```js
   var alchemist = require('alchemist-js').create()
   alchemist.use(alchemist.common())
-  var color = alchemize.lab(255,255,255)
+  var color = alchemize.lab(70,14,-10)
 ```
 
 If you are not using `alchemist.common` you can instead use this library directly
