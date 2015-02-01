@@ -3,19 +3,45 @@ var Alchemist = require('alchemist-js')
 var lab = require('../')
 
 describe('lab', function () {
-  var alchemist
+  var alchemist, xyz, ref_white;
 
   before(function () {
-    alchemist = Alchemist.create({ precision: 2 })
+    alchemist = Alchemist.create({ precision: 4, limits: 'nullify' })
+    xyz = { name: 'xyz', to: {} }
     alchemist.use(lab())
-    alchemist.use({ name: 'xyz', to: {} })
+    alchemist.use(xyz)
+    var white = alchemist.BaseSpace.white
+    ref_white = [white.X, white.Y, white.Z]
   })
 
-  it('to xyz', function () {
-    expect(alchemist.lab([80, 10, -10]).xyz()).to.deep.eq([.58, .57, .74])
+  describe('to xyz', function () {
+    it('should convert', function () {
+      expect(alchemist.lab(50, 20, -30).xyz()).to.deep.eq([0.2146, 0.1842, 0.4047])
+    })
+    it('handles greys well', function () {
+      expect(alchemist.lab(50, 0, 0).xyz()).to.deep.eq([0.1751, 0.1842, 0.2005])
+    })
+    it('handles black well', function () {
+      expect(alchemist.lab(0, 0, 0).xyz()).to.deep.eq([0, 0, 0])
+    })
+    it('handles white well', function () {
+      expect(alchemist.lab(100, 0, 0).xyz()).to.deep.eq([0.9505, 1, 1.089])
+    })
   })
 
-  it('from xyz', function () {
-    expect(alchemist.xyz([.50, .50, .50]).lab()).to.deep.eq([76.07, 6.78, 4.44])
+  describe('from xyz', function () {
+    it('should convert', function () {
+      expect(alchemist.xyz(.50, .50, .50).lab()).to.deep.eq([76.07, 6.7770, 4.44])
+    })
+    it('handles greys well', function () {
+      expect(alchemist.xyz(0.175064, 0.184187, 0.200548).lab()).to.deep.eq([50, -0.000118, 0.00006264])
+    })
+    it('handles black well', function () {
+      expect(alchemist.xyz(0, 0, 0).lab()).to.deep.eq([0, 0, 0])
+    })
+    it('handles white well', function () {
+      expect(alchemist.xyz(ref_white).lab()).to.deep.eq([100, 0, 0])
+    })
   })
 })
+
