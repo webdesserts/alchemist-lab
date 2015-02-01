@@ -6,8 +6,8 @@ module.exports = function lab () {
   return {
     name: 'lab',
     to: {
-      'xyz': function (L, a, b, color) {
-        var rW = color.white
+      'xyz': function (L, a, b) {
+        var rW = this.white
 
         var fy = (L + 16.0) / 116.0;
         var fx = 0.002 * a + fy;
@@ -28,8 +28,8 @@ module.exports = function lab () {
       }
     },
     from: {
-      'xyz': function (X, Y, Z, color) {
-        var rW = color.white
+      'xyz': function (X, Y, Z) {
+        var rW = this.white
         var f = function f (x) {
           return (x > kE) ? Math.pow(x, 1 / 3) : ((kK * x + 16) / 116)
         }
