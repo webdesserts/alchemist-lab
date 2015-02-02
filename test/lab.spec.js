@@ -10,7 +10,7 @@ describe('lab', function () {
     xyz = { name: 'xyz', to: {} }
     alchemist.use(lab())
     alchemist.use(xyz)
-    var white = alchemist.BaseSpace.white
+    var white = alchemist.white
     ref_white = [white.X, white.Y, white.Z]
   })
 
@@ -44,4 +44,3 @@ describe('lab', function () {
     })
   })
 })
-
