@@ -1,32 +1,13 @@
 Lab
 ===
 
-The official Lab color-space plugin for alchemist.js.
+`alchemist-lab` is the official **Lab** color-space plugin for alchemist.js. It is
+available as an [npm package][] and a [UMD module][]. It also is inlcuded by
+default in [alchemist-common][] and consiquentially, alchemist itself.
 
-Usage
------
-
-### Node
-
-By default alchemist-lab is included in `alchemist.common`.
-
-```js
-  var alchemist = require('alchemist-js')
-  alchemist.use(alchemist.common())
-  var color = alchemize.lab(70,14,-10)
-```
-
-If you are not using `alchemist.common` you can instead use this library directly
-
-```js
-  var alchemist = require('alchemist-js')
-  var lab = require('alchemist-lab')
-  alchemist.use(lab())
-```
-
-### Web
-
-[coming soon]
+[npm package]: https://www.npmjs.com/package/alchemist-lab
+[UMD Module]: /dist/
+[alchemist-common]: https://www.npmjs.com/package/alchemist-common
 
 Special Thanks
 --------------
