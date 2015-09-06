@@ -2,8 +2,10 @@
   "name": "alchemist-lab",
   "version": "1.0.0",
   "description": "the official Lab plugin for Alchemist.js",
-  "main": "index.js",
+  "main": "dist/alchemist-lab-node.js",
+  "main:src": "index.js",
   "scripts": {
+    "dev": "gulp",
     "test": "gulp test",
     "build": "gulp build"
   },
@@ -24,9 +26,9 @@
   },
   "homepage": "https://github.com/webdesserts/alchemist-lab",
   "devDependencies": {
-    "chai": "^1.10.0",
-    "gulp": "^3.8.10",
-    "alchemist": "^1.0.0",
-    "alchemist-gulp": "^1.0.0"
+    "alchemist-gulp": "^2.0.0",
+    "alchemist-js": "^2.0.0",
+    "babel-core": "^5.8.23",
+    "gulp": "gulpjs/gulp#4.0"
   }
 }

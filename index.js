@@ -13,7 +13,7 @@
  *
  */
 
-module.exports = function lab () {
+export default function lab () {
   return function Initializer (alchemist) {
     var kE = 216 / 24389 // 0.08856
     var kK = 24389 / 27 // 903.3
